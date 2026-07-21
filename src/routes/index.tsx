@@ -20,6 +20,12 @@ import logo from "@/assets/omolemo-logo.png";
 import hero from "@/assets/hero-clinician.jpg";
 import posterAwareness from "@/assets/poster-awareness.jpg";
 import posterServices from "@/assets/poster-services.jpg";
+import galBaby from "@/assets/gallery-baby.jpg";
+import galSteth from "@/assets/gallery-stethoscope.jpg";
+import galRoom from "@/assets/gallery-clinic-room.jpg";
+import galAntenatal from "@/assets/gallery-antenatal.jpg";
+import galBp from "@/assets/gallery-bp.jpg";
+import galFlat from "@/assets/gallery-flatlay.jpg";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -54,12 +60,66 @@ function Home() {
         <MarqueeBar />
         <About />
         <Services />
+        <Gallery />
         <ScrollSection />
         <Awareness />
         <Contact />
         <Footer />
       </div>
     </div>
+  );
+}
+
+function Gallery() {
+  const items = [
+    { src: galBaby, alt: "Baby clinic care", span: "row-span-2", label: "Baby Clinic" },
+    { src: galSteth, alt: "Stethoscope on scrubs", span: "", label: "Every Heartbeat" },
+    { src: galRoom, alt: "Modern consultation room", span: "", label: "Our Space" },
+    { src: galAntenatal, alt: "Antenatal consultation", span: "row-span-2", label: "Antenatal" },
+    { src: galBp, alt: "Chronic illness consultation", span: "", label: "Chronic Care" },
+    { src: galFlat, alt: "Medical flat lay", span: "", label: "Preparedness" },
+  ];
+  return (
+    <section id="gallery" className="relative border-t border-white/5">
+      <div className="mx-auto max-w-7xl px-4 py-24 md:px-8 md:py-32">
+        <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <div className="text-[11px] uppercase tracking-[0.4em] text-white/50">Inside the clinic</div>
+            <h2 className="mt-4 max-w-2xl font-serif text-4xl font-light leading-tight md:text-6xl">
+              Moments of <em className="text-[#e11d2f]">care</em>, captured.
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm text-white/60">
+            A quiet look at the people, hands and rooms behind every consultation at Omolemo.
+          </p>
+        </div>
+
+        <div className="grid auto-rows-[180px] grid-cols-2 gap-3 md:auto-rows-[220px] md:grid-cols-4 md:gap-4">
+          {items.map((it, i) => (
+            <motion.figure
+              key={it.src}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: i * 0.05 }}
+              className={`group relative overflow-hidden rounded-2xl border border-white/10 ${it.span}`}
+            >
+              <img
+                src={it.src}
+                alt={it.alt}
+                loading="lazy"
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+              <figcaption className="absolute inset-x-4 bottom-3 flex items-center justify-between text-[10px] uppercase tracking-[0.35em] text-white/80">
+                <span>{it.label}</span>
+                <span className="text-[#e11d2f]">✚</span>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
