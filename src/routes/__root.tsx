@@ -84,13 +84,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Omolemo Health Care Clinic in Roodekrans — professional, confidential and accessible healthcare with Sr. R.A Chuene. Book on WhatsApp.",
       },
       { name: "author", content: "Omolemo Health Care Clinic" },
-      { property: "og:title", content: "Omolemo Health Care Clinic" },
+      { property: "og:title", content: "Omolemo Health Care Clinic — Compassionate Care. Quality Health." },
       {
         property: "og:description",
-        content: "Compassionate Care. Quality Health. Every Time.",
+        content: "Omolemo Health Care Clinic in Roodekrans — professional, confidential and accessible healthcare with Sr. R.A Chuene. Book on WhatsApp.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Omolemo Health Care Clinic — Compassionate Care. Quality Health." },
+      { name: "twitter:description", content: "Omolemo Health Care Clinic in Roodekrans — professional, confidential and accessible healthcare with Sr. R.A Chuene. Book on WhatsApp." },
     ],
     links: [
       {
