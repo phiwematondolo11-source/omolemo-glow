@@ -405,12 +405,23 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group relative bg-black/70 p-8 backdrop-blur transition hover:bg-black/40"
+              className="group relative overflow-hidden bg-black/70 backdrop-blur transition"
             >
-              <s.icon className="h-8 w-8 text-[#e11d2f]" strokeWidth={1.4} />
-              <h3 className="mt-6 text-xl font-medium">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">{s.desc}</p>
-              <ArrowRight className="absolute right-6 top-6 h-4 w-4 -translate-x-2 text-white/30 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
+              <div className="relative h-44 w-full overflow-hidden">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <s.icon className="absolute left-6 top-6 h-8 w-8 text-[#e11d2f] drop-shadow-[0_0_10px_rgba(225,29,47,0.6)]" strokeWidth={1.4} />
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-medium">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">{s.desc}</p>
+              </div>
+              <ArrowRight className="absolute right-6 top-6 h-4 w-4 -translate-x-2 text-white/60 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
             </motion.div>
           ))}
         </div>
