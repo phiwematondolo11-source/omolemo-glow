@@ -12,12 +12,13 @@ import {
   Clock,
   ArrowRight,
   MessageCircle,
+  BookOpen,
 } from "lucide-react";
 import { MeshDriftShader } from "@/components/mesh-drift-shader";
 import { HeartbeatEcg } from "@/components/heartbeat-ecg";
 import { ContainerScroll } from "@/components/container-scroll";
 import logo from "@/assets/omolemo-logo.png";
-import heroAsset from "@/assets/clinician-portrait.jpeg.asset.json";
+import heroAsset from "@/assets/clinician-chuene.jpeg.asset.json";
 const hero = heroAsset.url;
 import posterAwareness from "@/assets/poster-awareness.jpg";
 import posterServices from "@/assets/poster-services.jpg";
@@ -34,16 +35,47 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP = "27614236255"; // international format for wa.me
 const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-  "Hi Omolemo Health Care Clinic, I'd like to book a consultation.",
+  "Hi Omolemo Health Care Clinic, I'd like to book a virtual consultation.",
 )}`;
+const AMAZON_BOOK = "https://www.amazon.com.au/Story-Life-Fifi-Dreamer/dp/B0CVG5Q8QR";
 
 const services = [
-  { icon: Baby, title: "Baby Clinic", desc: "Growth checks, immunisation guidance & new-parent support." },
-  { icon: HeartPulse, title: "Women's Health", desc: "Pap smears, wellness screening & confidential consultations." },
-  { icon: Stethoscope, title: "Antenatal Advice", desc: "Early bookings, procedure guidance & maternal care." },
-  { icon: ShieldPlus, title: "Wellness & HIV", desc: "PrEP, post-exposure counselling & referrals." },
-  { icon: Activity, title: "Chronic Illness", desc: "Ongoing consultation, diet & lifestyle planning." },
-  { icon: Stethoscope, title: "Minor Illness", desc: "Same-week visual consultations and basic testing." },
+  {
+    icon: HeartPulse,
+    title: "Women's Wellness Health",
+    desc: "Guidance on how often a Pap smear should be done, interpretation of results, and referral to the right hospital when needed.",
+    img: galSteth,
+  },
+  {
+    icon: Baby,
+    title: "Antenatal Advice",
+    desc: "Early pregnancy guidance and referrals to relevant clinics tailored to your affordability and needs.",
+    img: galAntenatal,
+  },
+  {
+    icon: Stethoscope,
+    title: "Minor Illness",
+    desc: "Virtual consultations with referrals, prescriptions and sick notes where clinically relevant.",
+    img: galRoom,
+  },
+  {
+    icon: ShieldPlus,
+    title: "Baby Clinic Advice",
+    desc: "Growth check guidance, immunisation schedules and new-parent support — all delivered virtually.",
+    img: galBaby,
+  },
+  {
+    icon: Activity,
+    title: "Chronic Illness Support",
+    desc: "Ongoing virtual consultation, diet, lifestyle planning and connection to the right care pathway.",
+    img: galBp,
+  },
+  {
+    icon: Stethoscope,
+    title: "Health Education",
+    desc: "Confidential health advice, screening reminders and preventative care for the whole family.",
+    img: galFlat,
+  },
 ];
 
 function Home() {
@@ -64,6 +96,7 @@ function Home() {
         <Gallery />
         <ScrollSection />
         <Awareness />
+        <BookSection />
         <Contact />
         <Footer />
       </div>
@@ -168,7 +201,7 @@ function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-white/70 backdrop-blur"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#e11d2f]" />
-            SANC 14796627 · Practice 0880000716839
+            Practice 0716839 · Virtual Consultations
           </motion.span>
 
           <motion.h1
@@ -306,13 +339,35 @@ function About() {
             </h2>
           </div>
           <div className="md:col-span-7 md:pl-12">
-            <p className="text-lg leading-relaxed text-white/70">
-              Sr. Refilwe A. Chuene is a dedicated healthcare professional with over 18 years of
-              clinical experience. As Operational Manager and Visual Consultation Specialist, she
-              ensures the highest standards of care for every patient — from newborns to elders.
+            <p className="text-lg leading-relaxed text-white/80">
+              Sr. Refilwe A. Chuene is a dedicated healthcare professional with over
+              <span className="text-white"> 18 years </span> of clinical experience, having served
+              as a clinician and <span className="text-white">Operational Manager Pro</span>.
             </p>
+            <p className="mt-5 text-base leading-relaxed text-white/70">
+              Since <span className="text-white">2018</span>, Omolemo Health Care Clinic operated
+              from its home at <span className="text-white">Florida</span>. Today, Sr. Chuene
+              focuses exclusively on <span className="text-[#e11d2f]">virtual consultations</span> —
+              bringing the same warmth, discretion and clinical rigour into your home, wherever you
+              are.
+            </p>
+            <p className="mt-5 text-base leading-relaxed text-white/70">
+              Beyond the clinic, she is also a published author of the children's ebook
+              <em className="text-white"> Fifi the Dreamer</em> — a story about hope, imagination
+              and quiet courage.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={AMAZON_BOOK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white backdrop-blur transition hover:border-[#e11d2f] hover:text-[#e11d2f]"
+              >
+                <BookOpen className="h-4 w-4" /> Read Fifi the Dreamer on Amazon
+              </a>
+            </div>
             <div className="mt-10 grid grid-cols-2 gap-6 border-t border-white/10 pt-8 text-sm text-white/70 sm:grid-cols-4">
-              {["18 yrs clinical", "Operational Manager", "Quality health care", "Patient-centered"].map((t) => (
+              {["18 yrs clinical", "Operational Manager Pro", "Virtual consultations", "Published author"].map((t) => (
                 <div key={t} className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#e11d2f]" />
                   {t}
@@ -351,12 +406,23 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group relative bg-black/70 p-8 backdrop-blur transition hover:bg-black/40"
+              className="group relative overflow-hidden bg-black/70 backdrop-blur transition"
             >
-              <s.icon className="h-8 w-8 text-[#e11d2f]" strokeWidth={1.4} />
-              <h3 className="mt-6 text-xl font-medium">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">{s.desc}</p>
-              <ArrowRight className="absolute right-6 top-6 h-4 w-4 -translate-x-2 text-white/30 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
+              <div className="relative h-44 w-full overflow-hidden">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <s.icon className="absolute left-6 top-6 h-8 w-8 text-[#e11d2f] drop-shadow-[0_0_10px_rgba(225,29,47,0.6)]" strokeWidth={1.4} />
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-medium">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">{s.desc}</p>
+              </div>
+              <ArrowRight className="absolute right-6 top-6 h-4 w-4 -translate-x-2 text-white/60 opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
             </motion.div>
           ))}
         </div>
@@ -543,6 +609,78 @@ function Contact() {
             >
               <MessageCircle className="h-4 w-4" /> Book on WhatsApp
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BookSection() {
+  return (
+    <section id="book" className="relative border-t border-white/5">
+      <div className="mx-auto max-w-7xl px-4 py-24 md:px-8 md:py-32">
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative mx-auto w-full max-w-sm"
+            >
+              <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-[#e11d2f]/30 via-transparent to-white/10 blur-2xl" />
+              <div className="relative rounded-[24px] border border-white/10 bg-gradient-to-br from-[#1a1a1a] to-[#050505] p-10 shadow-[0_40px_120px_-20px_rgba(225,29,47,0.35)]">
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-white/50">
+                  <BookOpen className="h-3.5 w-3.5" /> Ebook
+                </div>
+                <div className="mt-8 font-serif text-4xl font-light italic leading-none text-white">
+                  Fifi
+                </div>
+                <div className="mt-2 font-serif text-xl text-white/80">the Dreamer</div>
+                <div className="mt-8 h-px w-full bg-white/10" />
+                <div className="mt-6 text-xs uppercase tracking-[0.3em] text-[#e11d2f]">
+                  A story of life
+                </div>
+                <div className="mt-2 text-sm text-white/60">by Refilwe A. Chuene</div>
+              </div>
+            </motion.div>
+          </div>
+          <div className="md:col-span-7 md:pl-8">
+            <div className="text-[11px] uppercase tracking-[0.4em] text-white/50">From the author</div>
+            <h2 className="mt-4 font-serif text-4xl font-light leading-tight md:text-6xl">
+              Meet <em className="text-[#e11d2f]">Fifi</em> — a little dreamer with a big heart.
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
+              Sr. Refilwe A. Chuene's debut ebook, <em className="text-white">The Story of Life:
+              Fifi the Dreamer</em>, follows a gentle, curious child whose imagination becomes the
+              quiet courage that carries her through the hardest and brightest days of growing up.
+              A tender read for families, dreamers, and anyone who believes that hope is a form of
+              healing.
+            </p>
+            <p className="mt-4 max-w-xl text-sm text-white/50">
+              Available on Amazon. Read the full story and support the author.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={AMAZON_BOOK}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#FF9900] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-black shadow-[0_0_40px_-8px_rgba(255,153,0,0.7)] transition hover:bg-white"
+              >
+                <BookOpen className="h-4 w-4" />
+                Get it on Amazon
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </a>
+              <a
+                href={AMAZON_BOOK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-white/60 underline-offset-4 hover:text-white hover:underline"
+              >
+                amazon.com.au/Fifi-the-Dreamer
+              </a>
+            </div>
           </div>
         </div>
       </div>
