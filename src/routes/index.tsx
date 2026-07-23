@@ -632,19 +632,16 @@ function BookSection() {
               className="relative mx-auto w-full max-w-sm"
             >
               <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-[#e11d2f]/30 via-transparent to-white/10 blur-2xl" />
-              <div className="relative rounded-[24px] border border-white/10 bg-gradient-to-br from-[#1a1a1a] to-[#050505] p-10 shadow-[0_40px_120px_-20px_rgba(225,29,47,0.35)]">
-                <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-white/50">
-                  <BookOpen className="h-3.5 w-3.5" /> Ebook
-                </div>
-                <div className="mt-8 font-serif text-4xl font-light italic leading-none text-white">
-                  Fifi
-                </div>
-                <div className="mt-2 font-serif text-xl text-white/80">the Dreamer</div>
-                <div className="mt-8 h-px w-full bg-white/10" />
-                <div className="mt-6 text-xs uppercase tracking-[0.3em] text-[#e11d2f]">
-                  A story of life
-                </div>
-                <div className="mt-2 text-sm text-white/60">by Refilwe A. Chuene</div>
+              <div className="relative overflow-hidden rounded-[20px] border border-white/10 shadow-[0_40px_120px_-20px_rgba(225,29,47,0.35)]">
+                <img
+                  src={bookCover}
+                  alt="The Story of My Life: Fifi the Dreamer — book cover by Refilwe A. Chuene"
+                  className="block h-auto w-full"
+                  loading="lazy"
+                />
+              </div>
+              <div className="mt-4 text-center text-[10px] uppercase tracking-[0.4em] text-white/50">
+                by Refilwe A. Chuene
               </div>
             </motion.div>
           </div>
