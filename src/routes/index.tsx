@@ -616,6 +616,78 @@ function Contact() {
   );
 }
 
+function BookSection() {
+  return (
+    <section id="book" className="relative border-t border-white/5">
+      <div className="mx-auto max-w-7xl px-4 py-24 md:px-8 md:py-32">
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative mx-auto w-full max-w-sm"
+            >
+              <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-[#e11d2f]/30 via-transparent to-white/10 blur-2xl" />
+              <div className="relative rounded-[24px] border border-white/10 bg-gradient-to-br from-[#1a1a1a] to-[#050505] p-10 shadow-[0_40px_120px_-20px_rgba(225,29,47,0.35)]">
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-white/50">
+                  <BookOpen className="h-3.5 w-3.5" /> Ebook
+                </div>
+                <div className="mt-8 font-serif text-4xl font-light italic leading-none text-white">
+                  Fifi
+                </div>
+                <div className="mt-2 font-serif text-xl text-white/80">the Dreamer</div>
+                <div className="mt-8 h-px w-full bg-white/10" />
+                <div className="mt-6 text-xs uppercase tracking-[0.3em] text-[#e11d2f]">
+                  A story of life
+                </div>
+                <div className="mt-2 text-sm text-white/60">by Refilwe A. Chuene</div>
+              </div>
+            </motion.div>
+          </div>
+          <div className="md:col-span-7 md:pl-8">
+            <div className="text-[11px] uppercase tracking-[0.4em] text-white/50">From the author</div>
+            <h2 className="mt-4 font-serif text-4xl font-light leading-tight md:text-6xl">
+              Meet <em className="text-[#e11d2f]">Fifi</em> — a little dreamer with a big heart.
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
+              Sr. Refilwe A. Chuene's debut ebook, <em className="text-white">The Story of Life:
+              Fifi the Dreamer</em>, follows a gentle, curious child whose imagination becomes the
+              quiet courage that carries her through the hardest and brightest days of growing up.
+              A tender read for families, dreamers, and anyone who believes that hope is a form of
+              healing.
+            </p>
+            <p className="mt-4 max-w-xl text-sm text-white/50">
+              Available on Amazon. Read the full story and support the author.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={AMAZON_BOOK}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#FF9900] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-black shadow-[0_0_40px_-8px_rgba(255,153,0,0.7)] transition hover:bg-white"
+              >
+                <BookOpen className="h-4 w-4" />
+                Get it on Amazon
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </a>
+              <a
+                href={AMAZON_BOOK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-white/60 underline-offset-4 hover:text-white hover:underline"
+              >
+                amazon.com.au/Fifi-the-Dreamer
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="relative border-t border-white/10 bg-black/70 backdrop-blur">
