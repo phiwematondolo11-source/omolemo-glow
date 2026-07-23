@@ -96,6 +96,8 @@ function Home() {
         <Gallery />
         <ScrollSection />
         <Awareness />
+        <BookSection />
+        <Nav />{/*noop*/}
         <Contact />
         <Footer />
       </div>
