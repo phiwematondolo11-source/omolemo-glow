@@ -28,6 +28,8 @@ import galRoom from "@/assets/gallery-clinic-room.jpg";
 import galAntenatal from "@/assets/gallery-antenatal.jpg";
 import galBp from "@/assets/gallery-bp.jpg";
 import galFlat from "@/assets/gallery-flatlay.jpg";
+import bookCoverAsset from "@/assets/fifi-book-cover.jpeg.asset.json";
+const bookCover = bookCoverAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Home,
