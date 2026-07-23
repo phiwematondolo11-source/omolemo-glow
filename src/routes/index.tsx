@@ -12,12 +12,13 @@ import {
   Clock,
   ArrowRight,
   MessageCircle,
+  BookOpen,
 } from "lucide-react";
 import { MeshDriftShader } from "@/components/mesh-drift-shader";
 import { HeartbeatEcg } from "@/components/heartbeat-ecg";
 import { ContainerScroll } from "@/components/container-scroll";
 import logo from "@/assets/omolemo-logo.png";
-import heroAsset from "@/assets/clinician-portrait.jpeg.asset.json";
+import heroAsset from "@/assets/clinician-chuene.jpeg.asset.json";
 const hero = heroAsset.url;
 import posterAwareness from "@/assets/poster-awareness.jpg";
 import posterServices from "@/assets/poster-services.jpg";
@@ -34,16 +35,47 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP = "27614236255"; // international format for wa.me
 const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-  "Hi Omolemo Health Care Clinic, I'd like to book a consultation.",
+  "Hi Omolemo Health Care Clinic, I'd like to book a virtual consultation.",
 )}`;
+const AMAZON_BOOK = "https://www.amazon.com.au/Story-Life-Fifi-Dreamer/dp/B0CVG5Q8QR";
 
 const services = [
-  { icon: Baby, title: "Baby Clinic", desc: "Growth checks, immunisation guidance & new-parent support." },
-  { icon: HeartPulse, title: "Women's Health", desc: "Pap smears, wellness screening & confidential consultations." },
-  { icon: Stethoscope, title: "Antenatal Advice", desc: "Early bookings, procedure guidance & maternal care." },
-  { icon: ShieldPlus, title: "Wellness & HIV", desc: "PrEP, post-exposure counselling & referrals." },
-  { icon: Activity, title: "Chronic Illness", desc: "Ongoing consultation, diet & lifestyle planning." },
-  { icon: Stethoscope, title: "Minor Illness", desc: "Same-week visual consultations and basic testing." },
+  {
+    icon: HeartPulse,
+    title: "Women's Wellness Health",
+    desc: "Guidance on how often a Pap smear should be done, interpretation of results, and referral to the right hospital when needed.",
+    img: galSteth,
+  },
+  {
+    icon: Baby,
+    title: "Antenatal Advice",
+    desc: "Early pregnancy guidance and referrals to relevant clinics tailored to your affordability and needs.",
+    img: galAntenatal,
+  },
+  {
+    icon: Stethoscope,
+    title: "Minor Illness",
+    desc: "Virtual consultations with referrals, prescriptions and sick notes where clinically relevant.",
+    img: galRoom,
+  },
+  {
+    icon: ShieldPlus,
+    title: "Baby Clinic Advice",
+    desc: "Growth check guidance, immunisation schedules and new-parent support — all delivered virtually.",
+    img: galBaby,
+  },
+  {
+    icon: Activity,
+    title: "Chronic Illness Support",
+    desc: "Ongoing virtual consultation, diet, lifestyle planning and connection to the right care pathway.",
+    img: galBp,
+  },
+  {
+    icon: Stethoscope,
+    title: "Health Education",
+    desc: "Confidential health advice, screening reminders and preventative care for the whole family.",
+    img: galFlat,
+  },
 ];
 
 function Home() {
