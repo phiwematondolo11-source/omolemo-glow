@@ -338,13 +338,35 @@ function About() {
             </h2>
           </div>
           <div className="md:col-span-7 md:pl-12">
-            <p className="text-lg leading-relaxed text-white/70">
-              Sr. Refilwe A. Chuene is a dedicated healthcare professional with over 18 years of
-              clinical experience. As Operational Manager and Visual Consultation Specialist, she
-              ensures the highest standards of care for every patient — from newborns to elders.
+            <p className="text-lg leading-relaxed text-white/80">
+              Sr. Refilwe A. Chuene is a dedicated healthcare professional with over
+              <span className="text-white"> 18 years </span> of clinical experience, having served
+              as a clinician and <span className="text-white">Operational Manager Pro</span>.
             </p>
+            <p className="mt-5 text-base leading-relaxed text-white/70">
+              Since <span className="text-white">2018</span>, Omolemo Health Care Clinic operated
+              from its home at <span className="text-white">Florida</span>. Today, Sr. Chuene
+              focuses exclusively on <span className="text-[#e11d2f]">virtual consultations</span> —
+              bringing the same warmth, discretion and clinical rigour into your home, wherever you
+              are.
+            </p>
+            <p className="mt-5 text-base leading-relaxed text-white/70">
+              Beyond the clinic, she is also a published author of the children's ebook
+              <em className="text-white"> Fifi the Dreamer</em> — a story about hope, imagination
+              and quiet courage.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={AMAZON_BOOK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white backdrop-blur transition hover:border-[#e11d2f] hover:text-[#e11d2f]"
+              >
+                <BookOpen className="h-4 w-4" /> Read Fifi the Dreamer on Amazon
+              </a>
+            </div>
             <div className="mt-10 grid grid-cols-2 gap-6 border-t border-white/10 pt-8 text-sm text-white/70 sm:grid-cols-4">
-              {["18 yrs clinical", "Operational Manager", "Quality health care", "Patient-centered"].map((t) => (
+              {["18 yrs clinical", "Operational Manager Pro", "Virtual consultations", "Published author"].map((t) => (
                 <div key={t} className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#e11d2f]" />
                   {t}
