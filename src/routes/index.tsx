@@ -200,7 +200,7 @@ function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-white/70 backdrop-blur"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#e11d2f]" />
-            SANC 14796627 · Practice 0880000716839
+            Practice 0716839 · Virtual Consultations
           </motion.span>
 
           <motion.h1
