@@ -740,24 +740,25 @@ function Footer() {
     <footer className="relative border-t border-white/10 bg-black/70 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-8">
         <div className="mb-6 h-8 w-full text-[#e11d2f]"><HeartbeatEcg className="h-full" bpm={60} /></div>
-        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <img src={logo} alt="Omolemo Health Care Clinic" className="h-10 w-auto" />
-          <div className="text-center text-xs uppercase tracking-[0.4em] text-white/50">
+        <div className="flex flex-col items-center justify-between gap-8 text-center md:flex-row md:gap-6 md:text-left">
+          <img src={logo} alt="Omolemo Health Care Clinic" className="h-10 w-auto shrink-0" />
+          <div className="text-center text-[10px] uppercase leading-relaxed tracking-[0.3em] text-white/50 sm:text-xs sm:tracking-[0.4em]">
             Compassionate Care · Quality Health · Every Time
           </div>
-          <div className="flex items-center gap-3">
-            <a href={SOCIALS.instagram} target="_blank" rel="noreferrer noopener" aria-label="Instagram" className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white/70 transition hover:border-[#e11d2f]/60 hover:bg-[#e11d2f]/10 hover:text-white">
-              <Instagram className="h-4 w-4" />
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-3">
+            <a href={SOCIALS.instagram} target="_blank" rel="noreferrer noopener" aria-label="Instagram" className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white/70 transition hover:border-[#e11d2f]/60 hover:bg-[#e11d2f]/10 hover:text-white sm:h-11 sm:w-11">
+              <Instagram className="h-5 w-5" />
             </a>
-            <a href={SOCIALS.facebook} target="_blank" rel="noreferrer noopener" aria-label="Facebook" className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white/70 transition hover:border-[#e11d2f]/60 hover:bg-[#e11d2f]/10 hover:text-white">
-              <Facebook className="h-4 w-4" />
+            <a href={SOCIALS.facebook} target="_blank" rel="noreferrer noopener" aria-label="Facebook" className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white/70 transition hover:border-[#e11d2f]/60 hover:bg-[#e11d2f]/10 hover:text-white sm:h-11 sm:w-11">
+              <Facebook className="h-5 w-5" />
             </a>
-            <a href={SOCIALS.tiktok} target="_blank" rel="noreferrer noopener" aria-label="TikTok" className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white/70 transition hover:border-[#e11d2f]/60 hover:bg-[#e11d2f]/10 hover:text-white">
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M16.5 3a5.5 5.5 0 0 0 4.5 4.5v3a8.5 8.5 0 0 1-4.5-1.4v6.4a6 6 0 1 1-6-6c.34 0 .67.03 1 .09v3.16a3 3 0 1 0 2 2.83V3h3z"/></svg>
+            <a href={SOCIALS.tiktok} target="_blank" rel="noreferrer noopener" aria-label="TikTok" className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white/70 transition hover:border-[#e11d2f]/60 hover:bg-[#e11d2f]/10 hover:text-white sm:h-11 sm:w-11">
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M16.5 3a5.5 5.5 0 0 0 4.5 4.5v3a8.5 8.5 0 0 1-4.5-1.4v6.4a6 6 0 1 1-6-6c.34 0 .67.03 1 .09v3.16a3 3 0 1 0 2 2.83V3h3z"/></svg>
             </a>
           </div>
           <div className="text-xs text-white/40">© {new Date().getFullYear()} Omolemo Health Care Clinic</div>
         </div>
+
       </div>
     </footer>
   );
