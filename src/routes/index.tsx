@@ -603,7 +603,7 @@ function Contact() {
                 <Phone className="h-6 w-6 text-white" />
                 <div>
                   <div className="text-xs uppercase tracking-widest text-white/50">Call</div>
-                  <div className="text-lg">061 423 6255 · 061 500 4776</div>
+                  <div className="text-lg">061 423 6255</div>
                 </div>
               </a>
               <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
