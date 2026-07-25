@@ -13,6 +13,8 @@ import {
   ArrowRight,
   MessageCircle,
   BookOpen,
+  Instagram,
+  Facebook,
 } from "lucide-react";
 import { MeshDriftShader } from "@/components/mesh-drift-shader";
 import { HeartbeatEcg } from "@/components/heartbeat-ecg";
