@@ -30,6 +30,13 @@ import galBp from "@/assets/gallery-bp.jpg";
 import galFlat from "@/assets/gallery-flatlay.jpg";
 import bookCoverAsset from "@/assets/fifi-book-cover.jpeg.asset.json";
 const bookCover = bookCoverAsset.url;
+import consultationImg from "@/assets/consultation-virtual.jpg";
+
+const SOCIALS = {
+  instagram: "https://www.instagram.com/omolemovirtualhealthcare/?utm_source=ig_web_button_share_sheet",
+  facebook: "https://www.facebook.com/share/1JHCpqFB8z/",
+  tiktok: "https://www.tiktok.com/@omolemo.virtual.h?_r=1&_t=ZS-98DHwaNJVgL",
+};
 
 export const Route = createFileRoute("/")({
   component: Home,
