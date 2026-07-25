@@ -30,6 +30,13 @@ import galBp from "@/assets/gallery-bp.jpg";
 import galFlat from "@/assets/gallery-flatlay.jpg";
 import bookCoverAsset from "@/assets/fifi-book-cover.jpeg.asset.json";
 const bookCover = bookCoverAsset.url;
+import consultationImg from "@/assets/consultation-virtual.jpg";
+
+const SOCIALS = {
+  instagram: "https://www.instagram.com/omolemovirtualhealthcare/?utm_source=ig_web_button_share_sheet",
+  facebook: "https://www.facebook.com/share/1JHCpqFB8z/",
+  tiktok: "https://www.tiktok.com/@omolemo.virtual.h?_r=1&_t=ZS-98DHwaNJVgL",
+};
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -449,13 +456,13 @@ function ScrollSection() {
       >
         <div className="relative h-full w-full overflow-hidden">
           <img
-            src={hero}
-            alt="Inside Omolemo Health Care Clinic"
-            className="h-full w-full object-cover opacity-60"
+            src={consultationImg}
+            alt="Virtual consultation via smartphone"
+            className="h-full w-full object-cover opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-          <div className="absolute inset-0 flex flex-col items-center justify-end gap-6 p-8 text-center md:p-16">
-            <div className="text-[10px] uppercase tracking-[0.5em] text-white/60">Visual Consultation via WhatsApp</div>
+          <div className="absolute inset-0 flex flex-col items-center justify-end gap-5 p-8 text-center md:p-16">
+            <div className="text-[10px] uppercase tracking-[0.5em] text-white/60">Virtual Consultation via WhatsApp</div>
             <div className="font-serif text-3xl md:text-5xl">
               Send us a message — get a booking in minutes.
             </div>
@@ -467,7 +474,45 @@ function ScrollSection() {
             >
               <MessageCircle className="h-4 w-4" /> Book on WhatsApp
             </a>
-            <div className="mt-4 h-8 w-full max-w-md text-white/30">
+
+            {/* Socials */}
+            <div className="mt-2 flex flex-col items-center gap-3">
+              <div className="text-[10px] uppercase tracking-[0.5em] text-white/50">Follow us</div>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href={SOCIALS.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur transition hover:border-[#e11d2f] hover:text-[#e11d2f]"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                  Instagram
+                </a>
+                <a
+                  href={SOCIALS.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                  className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur transition hover:border-[#e11d2f] hover:text-[#e11d2f]"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.3-2 2-2h2V2.2C16.6 2.1 15.4 2 14.2 2 11.6 2 10 3.6 10 6.6V10H7v4h3v8h3z"/></svg>
+                  Facebook
+                </a>
+                <a
+                  href={SOCIALS.tiktok}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="TikTok"
+                  className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur transition hover:border-[#e11d2f] hover:text-[#e11d2f]"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M21 8.5a7.6 7.6 0 0 1-4.6-1.5v7.6a5.9 5.9 0 1 1-5.9-5.9c.3 0 .6 0 .9.1v3.1a2.9 2.9 0 1 0 2 2.7V2h3a4.6 4.6 0 0 0 4.6 4.5V8.5z"/></svg>
+                  TikTok
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-2 h-8 w-full max-w-md text-white/30">
               <HeartbeatEcg className="h-full" bpm={90} />
             </div>
           </div>
@@ -476,6 +521,7 @@ function ScrollSection() {
     </section>
   );
 }
+
 
 function Awareness() {
   return (
